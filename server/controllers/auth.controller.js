@@ -63,3 +63,33 @@ export const login = asyncHandler(async (req, res) => {
         })
     );
 });
+
+export const getCurrentUser = asyncHandler(async (req, res) => {
+
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            "User fetched successfully",
+            {
+                user: {
+                    id: req.user._id,
+                    name: req.user.name,
+                    email: req.user.email,
+                    role: req.user.role,
+                },
+            }
+        )
+    );
+});
+
+export const logout = asyncHandler(async (req, res) => {
+
+    res.clearCookie("token");
+
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            "Logged out successfully"
+        )
+    );
+});

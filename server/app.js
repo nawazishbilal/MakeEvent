@@ -11,9 +11,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
-app.use(errorHandler);
-
 app.use(
     cors({
         origin: process.env.CLIENT_URL,
@@ -22,6 +19,9 @@ app.use(
 );
 
 app.use(cookieParser());
+
+app.use("/api/auth", authRoutes);
+app.use(errorHandler);
 
 app.get("/", (req, res) => {
     res.json({

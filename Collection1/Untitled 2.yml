@@ -1,10 +1,11 @@
 info:
   name: Untitled 2
   type: http
+  seq: 1
 
 http:
-  method: POST
-  url: http://localhost:5000/api/auth/login
+  method: GET
+  url: http://localhost:5000/api/auth/me
   body:
     type: json
     data: |-
