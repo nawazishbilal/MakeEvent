@@ -1,11 +1,9 @@
-import Navbar from "@/components/landing/Navbar";
-import Hero from "@/components/landing/Hero";
+import useAuth from "@/hooks/useAuth";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-background via-background to-muted/30">
-      <Navbar />
-      <Hero />
-    </main>
-  );
+  const { user } = useAuth();
+
+  console.log(user);
+
+  return <h1>Home</h1>;
 }
