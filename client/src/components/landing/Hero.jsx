@@ -1,37 +1,50 @@
 import { Button } from "@/components/ui/button";
-import { CalendarDays } from "lucide-react";
+import Container from "@/components/common/Container";
+import Section from "@/components/common/Section";
+import Stats from "./Stats";
+import { SITE } from "@/lib/site";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
+    <Section>
 
-      <div className="mb-4 rounded-full border px-4 py-2 text-sm">
-        🚀 Event Management Made Simple
-      </div>
+      <Container>
 
-      <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight md:text-7xl">
-        Organize College Events
-        <span className="text-primary">
-          {" "}Effortlessly
-        </span>
-      </h1>
+        <div className="mx-auto max-w-4xl text-center">
 
-      <p className="mt-6 max-w-2xl text-muted-foreground text-lg">
-        Create, manage, register and track events with built-in analytics,
-        waitlists, smart search and QR attendance.
-      </p>
+          <span className="rounded-full border px-4 py-2 text-sm">
+            🚀 Built for Colleges & Communities
+          </span>
 
-      <div className="mt-10 flex gap-4">
-        <Button size="lg">
-          Explore Events
-        </Button>
+          <h1 className="mt-8 text-6xl lg:text-7xl font-extrabold tracking-tight md:text-7xl">
+            {SITE.tagline}
+          </h1>
 
-        <Button variant="outline" size="lg">
-          <CalendarDays className="mr-2 h-5 w-5" />
-          Create Event
-        </Button>
-      </div>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+            {SITE.description}
+          </p>
 
-    </section>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+
+            <Button size="lg">
+              Explore Events
+            </Button>
+
+            <Button variant="outline" size="lg">
+              Become an Organizer
+
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+
+          </div>
+
+          <Stats />
+
+        </div>
+
+      </Container>
+
+    </Section>
   );
 }

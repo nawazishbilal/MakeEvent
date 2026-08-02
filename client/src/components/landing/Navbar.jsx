@@ -1,5 +1,27 @@
 import { Button } from "@/components/ui/button";
 import Logo from "../common/Logo";
+import { Link } from "react-router-dom";
+
+const navLinks = [
+  {
+    title: "Explore",
+    path: "/events",
+  },
+  {
+    title: "Features",
+    path: "#features",
+  },
+];
+
+{navLinks.map((link) => (
+  <Link
+    key={link.title}
+    to={link.path}
+    className="text-sm font-medium transition-colors hover:text-primary"
+  >
+    {link.title}
+  </Link>
+))}
 
 export default function Navbar() {
   return (
