@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import errorHandler from "./middleware/error.middleware.js";
+import eventRoutes from "./routes/event.routes.js";
 
 dotenv.config();
 
@@ -22,6 +23,8 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use(errorHandler);
+
+app.use("/api/events", eventRoutes);
 
 app.get("/", (req, res) => {
     res.json({

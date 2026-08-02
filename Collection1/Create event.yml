@@ -1,0 +1,31 @@
+info:
+  name: Create event
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:5000/api/events
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Sports Mania 6.0",
+        "description": "Annual sports event",
+        "category": "Sports",
+        "venue": "LPU Main Ground",
+        "startDate": "2026-09-10",
+        "endDate": "2026-09-12",
+        "registrationDeadline": "2026-09-05",
+        "maxParticipants": 100,
+        "isTeamEvent": true,
+        "minTeamSize": 6,
+        "maxTeamSize": 8
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
