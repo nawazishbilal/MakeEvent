@@ -1,4 +1,5 @@
 import AuthCard from "@/components/auth/AuthCard";
+import RegisterForm from "@/components/auth/RegisterForm";
 
 export default function Register() {
   return (
@@ -6,13 +7,7 @@ export default function Register() {
       title="Create Account"
       subtitle="Start organizing amazing events today."
     >
-
-      <div className="rounded-lg bg-muted p-10 text-center">
-
-        Register Form Goes Here
-
-      </div>
-
+      <RegisterForm />
     </AuthCard>
   );
 }

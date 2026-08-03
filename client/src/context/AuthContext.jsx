@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
         try {
             const response = await getCurrentUser();
 
-            setUser(response.data.user);
+            setUser(response.data.data.user);
         } catch {
             setUser(null);
         } finally {
