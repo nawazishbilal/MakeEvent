@@ -7,30 +7,37 @@ import Register from "@/pages/auth/Register";
 
 import AuthLayout from "@/layouts/AuthLayout";
 
+import Dashboard from "@/pages/Dashboard";
+
 export default function AppRouter() {
-  return (
-    <Routes>
+    return (
+        <Routes>
 
-      {/* Public */}
+            {/* Public */}
 
-      <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
 
-      {/* Authentication */}
+            <Route
+                path="/dashboard"
+                element={<Dashboard />}
+            />
 
-      <Route element={<AuthLayout />}>
+            {/* Authentication */}
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+            <Route element={<AuthLayout />}>
 
-        <Route
-          path="/register"
-          element={<Register />}
-        />
+                <Route
+                    path="/login"
+                    element={<Login />}
+                />
 
-      </Route>
+                <Route
+                    path="/register"
+                    element={<Register />}
+                />
 
-    </Routes>
-  );
+            </Route>
+
+        </Routes>
+    );
 }
