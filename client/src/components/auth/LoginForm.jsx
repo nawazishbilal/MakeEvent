@@ -7,6 +7,7 @@ import FormInput from "@/components/form/FormInput";
 import PasswordField from "./PasswordField";
 import { loginSchema } from "@/lib/validators";
 import { useAuth } from "@/context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
     const navigate = useNavigate();
@@ -66,6 +67,16 @@ export default function LoginForm() {
                     ? "Logging in..."
                     : "Login"}
             </Button>
+
+            <p className="text-center text-sm text-muted-foreground">
+                Don't have an account?{" "}
+                <Link
+                    to="/register"
+                    className="font-medium text-primary hover:underline"
+                >
+                    Register
+                </Link>
+            </p>
 
         </form>
     );

@@ -102,6 +102,18 @@ const eventSchema = new mongoose.Schema(
             enum: Object.values(EVENT_STATUS),
             default: EVENT_STATUS.DRAFT,
         },
+
+        slug: {
+            type: String,
+            unique: true,
+            index: true,
+        },
+
+        visibility: {
+            type: String,
+            enum: ["public", "private"],
+            default: "public",
+        }
     },
     {
         timestamps: true,
