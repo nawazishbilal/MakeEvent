@@ -1,4 +1,4 @@
-import { CalendarDays, Home, Settings, Users } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const links = [
